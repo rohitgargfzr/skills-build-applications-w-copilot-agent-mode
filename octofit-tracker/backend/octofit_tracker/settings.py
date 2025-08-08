@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "djongo",
+    "octofit_tracker",  # Added octofit_tracker to the installed apps
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Enable CORS
 CORS_ALLOW_ALL_ORIGINS = True
 ALLOWED_HOSTS = ["*"]
+
+# Allow access to codespace URL and localhost
+ALLOWED_HOSTS += ['literate-space-fishstick-g4767g47jp63p95v-8000.app.github.dev', 'localhost']
+
+# Add REST framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+}
